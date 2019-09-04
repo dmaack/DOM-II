@@ -1,13 +1,13 @@
 // Your code goes here
 
-/*** #1 - MOUSEOVER + MOUSELEAVE - ***/
+/*** #1 - MOUSEOVER ***/
 
 const imgScaleUp = document.querySelector('.intro img');
 imgScaleUp.addEventListener('mouseover' , e => {
     imgScaleUp.style.transform = 'scale(1.2)';
     imgScaleUp.style.transition = 'transform 0.5s';
 })
-
+/***  #2MOUSELEAVE - ***/
 const imgScaleDown = document.querySelector('.intro img');
 imgScaleDown.addEventListener('mouseleave' , e => {
     imgScaleDown.style.transform = 'scale(1)';
@@ -15,21 +15,20 @@ imgScaleDown.addEventListener('mouseleave' , e => {
 })
 
 
-/*** #2 - DOUBLECLICK - ***/
+/*** #3 - DOUBLECLICK - ***/
 const doubleBig = document.querySelectorAll('.btn');
 doubleBig.forEach(item => {
     item.addEventListener('dblclick' , e => {
        item.style.color = 'turquoise';
        item.style.backgroundColor = 'pink';
        item.style.transform = 'scale(1.5)';
-      
        item.style.transition = '.5s';
        
     })
 })
 
 
-/*** #3 - WHEEL - ***/
+/*** #4 - WHEEL - ***/
 
 const fbScroll = document.querySelector('.logo-heading');
 fbScroll.addEventListener('wheel' , e => {
@@ -39,14 +38,16 @@ fbScroll.addEventListener('wheel' , e => {
 
 /*** #4 - DRAG/DROP - ***/
 
-// const dragged = document.querySelector('.destination h4');
+// const dragged;
+
+// document.querySelector('.destination h4');
 // dragged.addEventListener('drag' , e => {
    
 // } , false);
 
 // dragged.addEventListener('dragstart' , e => {
 //     dragged = e.target;
-//     e.taget.style.opacity = .5;
+//     e.target.style.opacity = .5;
 // },false);
 
 
@@ -83,8 +84,38 @@ bodyChange.addEventListener('keydown' , e => {
     bodyChange.style.backgroundColor = 'white';
 })
 
-/***** #8  ******/
+/***** #8  CONTEXTMENU ******/
 
-/***** #9  ******/
+const noContext = document.querySelector('.footer');
+noContext.addEventListener('contextmenu' , e => {
+        e.preventDefault();
+    })
 
-/***** #10  ******/
+
+/***** #9  MOUSEDOWN ******/
+const changeText = document.querySelector('.content-destination h2');
+changeText.addEventListener('mousedown' , e => {
+    changeText.textContent = 'Pick Your Destination NOW!'
+    changeText.style.fontSize = '4rem';
+    changeText.style.color = 'dodgerblue';
+})
+
+
+/***** #10 MOUSEMOVE ******/
+// const navBar = document.getElementsByTagName('html');
+//     navBar.addEventListener('focus' , e => {
+//     navBar.style.color = 'red';
+// })
+
+const navBar = document.querySelectorAll('.nav-link');
+navBar.forEach(item => {
+    item.addEventListener('mousedown' , e => {
+        item.style.color = 'orange';
+        item.style.fontSize = '3rem';
+    })
+    item.addEventListener('mouseup' , e => {
+        item.style.color = 'black';
+        item.style.fontSize = '1.5rem';
+    })
+})
+
